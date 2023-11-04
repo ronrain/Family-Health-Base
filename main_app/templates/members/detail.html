@@ -14,9 +14,9 @@
 <link 
   rel="stylesheet" 
   type="text/css" 
-  href="{% static 'css/cats/cat-detail.css' %}"
+  href="{% static 'css/members/member-detail.css' %}"
 />
-<script defer src="{% static 'js/cat-detail.js' %}"></script>
+<script defer src="{% static 'js/member-detail.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -51,7 +51,6 @@
       {{ appointment_form.as_p }} 
       <button type="submit" class="btn submit">Add Appointment</button>
   </form>
-  
     <h3>Past Doctor Appointments</h3>
     <table>
       <thead>

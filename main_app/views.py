@@ -30,3 +30,11 @@ class MemberUpdate(UpdateView):
 class MemberDelete(DeleteView):
   model = Member
   success_url = '/members/'
+
+def add_appointment(request, member_id):
+  form = AppointmentForm(request.POST)
+  if form.is_valid():
+    new_appointment = form.save(commit=False)
+    new_appointment.member_id = member_id
+    new_appointment.save()
+  return redirect('member-detail', member_id=member_id)

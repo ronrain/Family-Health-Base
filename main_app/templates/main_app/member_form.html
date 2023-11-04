@@ -2,6 +2,21 @@
 {% load static %}
 
 {% block head %}
+<link 
+  href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" 
+  rel="stylesheet" 
+/>
+<link rel="stylesheet" href="{% static 'css/mcdp.css' %}">
+<script 
+  src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"
+>
+</script>
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/members/member-detail.css' %}"
+/>
+<script defer src="{% static 'js/member-form.js' %}"></script>
 <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
 {% endblock %}
 
@@ -21,5 +36,6 @@
   </table>
   <button type="submit" class="btn submit">Submit!</button>
 </form>
+
 
 {% endblock %}
