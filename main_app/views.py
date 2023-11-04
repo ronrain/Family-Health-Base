@@ -11,6 +11,6 @@ def member_index(request):
   members = Member.objects.all()
   return render(request, 'members/index.html', { 'members': members })
 
-def member_detail(request, cat_id):
-  member = Member.objects.get(id=cat_id)
+def member_detail(request, member_id):
+  member = Member.objects.get(id=member_id)
   return render(request, 'members/detail.html', { 'member': member })

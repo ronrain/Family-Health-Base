@@ -18,7 +18,7 @@
 <section class="card-container">
   {% for member in members %}
     <div class="card">
-      <a href="/members/{{ member.id }}">
+      <a href="{% url 'member-detail' member.id %}">
         <div class="card-content">
           <div class="card-img-container">
           </div>
