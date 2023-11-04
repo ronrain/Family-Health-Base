@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/patients/patient-index.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>Family Members</h1>
+</section>
+
+<section class="card-container">
+  {% for member in members %}
+    <div class="card">
+      <a href="/patients/{{ member.id }}">
+        <div class="card-content">
+          <div class="card-img-container">
+          </div>
+          <h2 class="card-title">{{ member.name }}</h2>
+          {% if member.age > 0 %}
+            <p>{{ member.name }} is a {{ member.age }} year old {{ member.gender }} born on {{ member.birth_date }}</p>
+          {% else %}
+            <p>{{ member.name }} was born on {{ member.birth_date }}</p>
+          {% endif %}
+          <p><small>{{ member.medical_history }}</small></p>
+          <p><small>{{ member.name }} weights {{ member.weight }} and is {{ member.height }} inhces tall.</small></p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}

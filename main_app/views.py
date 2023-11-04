@@ -9,3 +9,6 @@ def home(request):
 
 def about(request):
   return render(request, 'about.html')
+
+def member_index(request):
+  return render(request, 'members/index.html', { 'members': members })
