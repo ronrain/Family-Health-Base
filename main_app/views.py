@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Member
 
 def home(request):
@@ -19,4 +19,12 @@ def member_detail(request, member_id):
 class MemberCreate(CreateView):
   model = Member
   fields = '__all__'
+  success_url = '/members/'
+
+class MemberUpdate(UpdateView):
+  model = Member
+  fields = ['gender', 'height', 'weight', 'medical_history', 'update_date']
+
+class MemberDelete(DeleteView):
+  model = Member
   success_url = '/members/'
