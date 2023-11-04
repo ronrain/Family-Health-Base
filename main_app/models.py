@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 GENDER = (
   ('M', 'Male'),
@@ -21,3 +22,6 @@ class Member(models.Model):
 
   def __str__(self):
     return self.name
+
+  def get_absolute_url(self):
+    return reverse('member-detail', kwargs={'member_id': self.id})
