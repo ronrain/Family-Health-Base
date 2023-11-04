@@ -30,29 +30,25 @@
   </div>
 </section>
 
-<div class="appointments-container">
-  <section class="appointments">
+<div class="appointment-container">
+  <section class="appointment">
     <div class="subsection-title">
       <h2 class="subsection-title">Appointments</h2>
     </div>
     <h3>Add an Appointment</h3>
-    <form 
-      action="{% url 'add-appointment' member.id %}"
-      method="post"
-      class="subsection-content"
-      autocomplete="off"
-    >
+    <form method="post" class="subsection-content" autocomplete="off">
       {% csrf_token %}
-      {{ visit_form.as_p }} 
+      {{ appointment_form.as_p }} 
       <button type="submit" class="btn submit">Add Appointment</button>
-    </form>
+  </form>
+  
     <h3>Past Doctor Appointments</h3>
     <table>
       <thead>
         <tr><th>Date</th><th>Visit Type</th></tr>
       </thead>
       <tbody>
-        {% for member in member.member_set.all %}
+        {% for appointment in member.appointment_set.all %}
           <tr>
             <td>{{ appointment.date }}</td>
             <td>{{ appointment.visit_type }}</td>

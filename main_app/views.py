@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Member
+from .forms import AppointmentForm
 
 def home(request):
   return render(request, 'home.html')
@@ -14,7 +15,8 @@ def member_index(request):
 
 def member_detail(request, member_id):
   member = Member.objects.get(id=member_id)
-  return render(request, 'members/detail.html', { 'member': member })
+  appointment_form = AppointmentForm()
+  return render(request, 'members/detail.html', { 'member': member, 'appointment_form': appointment_form })
 
 class MemberCreate(CreateView):
   model = Member

@@ -45,4 +45,4 @@ class Appointment(models.Model):
   member = models.ForeignKey(Member, on_delete=models.CASCADE)
 
   def __str__(self):
-    return f"{self.get_visit_type_display()} on {self.date}"
+    return f"{self.visit_type} on {self.date}"

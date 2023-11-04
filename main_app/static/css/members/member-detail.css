@@ -24,12 +24,12 @@
   margin-top: 20px;
 }
 
-/* .feedings-toy-container {
+.appointment-container {
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
   align-items: center;
-} */
+}
 
 .subsection-title {
   display: flex;
@@ -47,24 +47,6 @@
   width: 25px;
   margin-right: 10px;
 }
-
-/* .unfed,
-.fed,
-.no-toys,
-.all-toys {
-  margin: 0;
-  font-weight: bold;
-} */
-
-/* .unfed,
-.no-toys {
-  color: var(--danger);
-}
-
-.fed,
-.all-toys {
-  color: var(--submit);
-} */
 
 .member-details h1 {
   font-size: var(--font-xxl);
@@ -88,7 +70,7 @@
   margin: 5px 0;
 }
 
-/* .feedings-toy-container > section {
+.appointment-container > section {
   width: 80%;
   min-width: 360px;
   border: var(--borders);
@@ -99,7 +81,7 @@
   flex-direction: column;
   justify-content: center;
   margin-bottom: 20px;
-} */
+}
 
 .subsection-title img {
   height: 42px;
@@ -110,17 +92,15 @@
   margin-left: 16px;
 }
 
-/* .feedings h2,
-.toys h2 {
+.appointment h2{
   font-size: 3.2rem;
   margin: 0;
 }
 
-.feedings h3,
-.toys h3 {
+.appointment h3 {
   font-size: var(--font-xl);
   margin: 10px 0;
-} */
+}
 
 .subsection-content p,
 .subsection-content input,
@@ -134,27 +114,27 @@
   padding: 3px;
 }
 
-/* .feedings table {
+.appointment table {
   width: calc(100% - 16px);
   text-align: left;
   border-collapse: collapse;
   margin: 0 8px;
 }
 
-.feedings td {
+.appointment td {
   padding: 8px 5px;
   font-size: var(--font-reg);
 }
 
-.feedings th {
+.appointment th {
   font-size: var(--font-l);
   padding: 5px 5px 0;
   border-bottom: rgb(36, 116, 248) solid 2px;
 }
 
-.feedings tr:nth-child(even) {
+.appointment tr:nth-child(even) {
   background-color: #f3f3fd;
-} */
+}
 
 
 #file-input {
@@ -182,19 +162,19 @@
     margin-right: 25px;
   }
 
-  /* .feedings-toy-container {
+  .appointment-container {
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
   }
 
-  .feedings-toy-container > section {
+  .appointment-container > section {
     width: 45%;
-  } */
+  }
 }
 
 @media only screen and (min-width: 1024px) {
-  /* .feedings-toy-container {
+  .appointment-container {
     padding: 0 40px;
-  } */
+  }
 }
