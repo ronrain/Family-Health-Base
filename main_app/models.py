@@ -1,6 +1,11 @@
 from django.db import models
 from django.urls import reverse
 
+OPTIONS = (
+  ('Y', 'Yes'),
+  ('N', 'No')
+)
+
 GENDER = (
   ('M', 'Male'),
   ('F', 'Female'),
@@ -25,3 +30,19 @@ class Member(models.Model):
 
   def get_absolute_url(self):
     return reverse('member-detail', kwargs={'member_id': self.id})
+  
+class Appointment(models.Model):
+  date = models.DateField('Visit date')
+  visit_type = models.CharField(max_length=100)
+  diagnosis = models.CharField(max_length=100)
+  treatment = models.TextField(max_length=250)
+  follow_up = models.CharField(
+    max_length=1,
+    choices=OPTIONS,
+    default=OPTIONS[1][0]  
+  )
+
+  member = models.ForeignKey(Member, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"{self.get_visit_type_display()} on {self.date}"
