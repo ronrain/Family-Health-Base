@@ -5,7 +5,7 @@
 <link 
   rel="stylesheet"
   type="text/css"
-  href="{% static 'css/patients/patient-index.css' %}"
+  href="{% static 'css/members/member-index.css' %}"
 />
 {% endblock %}
 
@@ -18,7 +18,7 @@
 <section class="card-container">
   {% for member in members %}
     <div class="card">
-      <a href="/patients/{{ member.id }}">
+      <a href="/members/{{ member.id }}">
         <div class="card-content">
           <div class="card-img-container">
           </div>
