@@ -23,9 +23,9 @@
     {% endif %}
     <p>{{ member.medical_history }}</p>
     <p><small>{{ member.name }} weights {{ member.weight }} and is {{ member.height }} inhces tall.</small></p>
-    {% comment %} <div class="member-actions">
+    <div class="member-actions">
       <a href="{% url 'member-update' member.id %}" class="btn warn">Edit</a>
-      <a href="{% url 'member-delete' member.id %}" class="btn danger">Delete</a> {% endcomment %}
+      <a href="{% url 'member-delete' member.id %}" class="btn danger">Delete</a>
     </div>
   </div>
 </section>
