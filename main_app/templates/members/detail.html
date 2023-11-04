@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/members/member-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="member-container">
+  <div class="member-img">
+  </div>
+  <div class="member-details">
+    <h2>{{ member.name }}</h2>
+    {% if member.age > 0 %}
+      <p>{{ member.name }} is a {{ member.age }} year old {{ member.gender }} born on {{ member.birth_date }}</p>
+    {% else %}
+      <p>{{ member.name }} is a {{ member.race }} born on {{ member.birth_date }}</p>
+    {% endif %}
+    <p>{{ member.medical_history }}</p>
+    <p><small>{{ member.name }} weights {{ member.weight }} and is {{ member.height }} inhces tall.</small></p>
+    {% comment %} <div class="member-actions">
+      <a href="{% url 'member-update' member.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'member-delete' member.id %}" class="btn danger">Delete</a> {% endcomment %}
+    </div>
+  </div>
+</section>
