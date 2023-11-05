@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.contrib.auth import login
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
@@ -56,12 +57,19 @@ class AppointmentDetail(LoginRequiredMixin, DetailView):
   model = Appointment
 
 class AppointmentUpdate(LoginRequiredMixin, UpdateView):
-  model = Appointment
-  fields = ['date', 'appointment_type', 'diagnosis', 'treatment', 'follow_up']
+    model = Appointment
+    fields = ['date', 'appointment_type', 'diagnosis', 'treatment', 'follow_up']
+
+    def get_success_url(self):
+        return reverse('appointment-detail', kwargs={'pk': self.object.pk})
+
 
 class AppointmentDelete(LoginRequiredMixin, DeleteView):
-  model = Appointment
-  success_url = '/members/member_id'
+    model = Appointment
+
+    def get_success_url(self):
+        member_id = self.object.member.id
+        return reverse('member-detail', kwargs={'member_id': member_id})
 
 def signup(request):
   error_message = ''
@@ -70,7 +78,7 @@ def signup(request):
     if form.is_valid():
       user = form.save()
       login(request, user)
-      return redirect('cat-index')
+      return redirect('member-index')
     else:
       error_message = 'Invalid sign up - try again'
   form = UserCreationForm()

@@ -16,26 +16,25 @@
   type="text/css" 
   href="{% static 'css/members/member-detail.css' %}"
 />
-<script defer src="{% static 'js/member-form.js' %}"></script>
+<script defer src="{% static 'js/date-input.js' %}"></script>
 <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
 {% endblock %}
 
 {% block content %}
   {% if member %}
-  <h1>Edit {{ member.name }}</h1>
+  <h1 class="header">Edit {{ member.name }}</h1>
   {% else %}
-  <h1>Add a Family Member</h1>
+  <h1 class="header">Add a Family Member</h1>
   {% endif %}
 <div class="page-header">
   {% comment %} <img src="{% static '' %}" alt=""/> {% endcomment %}
 </div>
 <form action="" method="post" class="form-container">
   {% csrf_token %}
-  <table>
+  <table class="form-input">
     {{ form.as_table }}
   </table>
-  <button type="submit" class="btn submit">Submit!</button>
+  <button type="submit" class="btn submit">Save</button>
 </form>
-
 
 {% endblock %}

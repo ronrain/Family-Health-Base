@@ -37,3 +37,12 @@ td > textarea {
   align-self: flex-end;
   margin-right: 40px;
 }
+
+.header {
+  font-family: var(--font-main);
+  font-size: 4rem;
+}
+
+.form-input {
+font-family: var(--font-second);
+}
