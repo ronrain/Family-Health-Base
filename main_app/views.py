@@ -6,6 +6,8 @@ from django.contrib.auth.views import LoginView
 from .models import Member, Appointment
 from .forms import AppointmentForm
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class Home(LoginView):
   template_name = 'home.html'
@@ -13,16 +15,18 @@ class Home(LoginView):
 def about(request):
   return render(request, 'about.html')
 
+@login_required
 def member_index(request):
-  members = Member.objects.all()
+  members = Member.objects.filter(user=request.user)
   return render(request, 'members/index.html', { 'members': members })
 
+@login_required
 def member_detail(request, member_id):
   member = Member.objects.get(id=member_id)
   appointment_form = AppointmentForm()
   return render(request, 'members/detail.html', { 'member': member, 'appointment_form': appointment_form })
 
-class MemberCreate(CreateView):
+class MemberCreate(LoginRequiredMixin, CreateView):
   model = Member
   fields = '__all__'
   success_url = '/members/'
@@ -31,14 +35,15 @@ class MemberCreate(CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-class MemberUpdate(UpdateView):
+class MemberUpdate(LoginRequiredMixin, UpdateView):
   model = Member
   fields = ['gender', 'height', 'weight', 'medical_history', 'update_date']
 
-class MemberDelete(DeleteView):
+class MemberDelete(LoginRequiredMixin, DeleteView):
   model = Member
   success_url = '/members/'
 
+@login_required
 def add_appointment(request, member_id):
   form = AppointmentForm(request.POST)
   if form.is_valid():
@@ -47,14 +52,14 @@ def add_appointment(request, member_id):
     new_appointment.save()
   return redirect('member-detail', member_id=member_id)
 
-class AppointmentDetail (DetailView):
+class AppointmentDetail(LoginRequiredMixin, DetailView):
   model = Appointment
 
-class AppointmentUpdate(UpdateView):
+class AppointmentUpdate(LoginRequiredMixin, UpdateView):
   model = Appointment
   fields = ['date', 'appointment_type', 'diagnosis', 'treatment', 'follow_up']
 
-class AppointmentDelete(DeleteView):
+class AppointmentDelete(LoginRequiredMixin, DeleteView):
   model = Appointment
   success_url = '/members/member_id'
 
