@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Member
+from django.views.generic import DetailView
+from .models import Member, Appointment
 from .forms import AppointmentForm
 
 def home(request):
@@ -38,3 +39,6 @@ def add_appointment(request, member_id):
     new_appointment.member_id = member_id
     new_appointment.save()
   return redirect('member-detail', member_id=member_id)
+
+class AppointmentDetail (DetailView):
+  model = Appointment

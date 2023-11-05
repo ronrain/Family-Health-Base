@@ -46,3 +46,6 @@ class Appointment(models.Model):
 
   def __str__(self):
     return f"{self.visit_type} on {self.date}"
+  
+  class Meta:
+    ordering = ['-date']
