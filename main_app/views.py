@@ -42,3 +42,11 @@ def add_appointment(request, member_id):
 
 class AppointmentDetail (DetailView):
   model = Appointment
+
+class AppointmentUpdate(UpdateView):
+  model = Appointment
+  fields = '__all__'
+
+class AppointmentDelete(DeleteView):
+  model = Appointment
+  success_url = '/members/member_id'
