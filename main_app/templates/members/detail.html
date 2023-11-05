@@ -28,7 +28,7 @@
     <h2>{{ member.name }}</h2>
       <p>{{ member.name }} was born on {{ member.birth_date }}</p>
     <p>Current Medical History: {{ member.medical_history }}</p>
-    <p>{{ member.name }} weights {{ member.weight }} and is {{ member.height }} inhces tall.</p>
+    <p>{{ member.name }} weighs {{ member.weight }} and is {{ member.height }} inhces tall.</p>
     <p><small>{{ member.gender }}</small></p>
     <div class="member-actions">
       <a href="{% url 'member-update' member.id %}" class="btn warn">Edit</a>
@@ -54,6 +54,7 @@
       <button type="submit" class="btn submit">Add Appointment</button>
   </form>
   <h3>Doctor Appointments</h3>
+  {% if member.appointment_set.count %}
   <table>
     <thead>
       <tr><th>Date</th><th>Appointment Type</th></tr>
@@ -67,6 +68,12 @@
       {% endfor %}
     </tbody>
   </table>
+  {% else %}
+    <div class="subsection-content">
+      <p>{{ member.name }} has no scheduled appointments</p>
+    </div>
+  {% endif %}
+  </section>
   
 
 {% endblock %}
