@@ -5,7 +5,7 @@
 <link 
   rel="stylesheet" 
   type="text/css" 
-  href="{% static 'css/members/member-detail.css' %}"
+  href="{% static 'css/members/appointment-detail.css' %}"
 />
 {% endblock %}
 
@@ -20,8 +20,10 @@
     <p>Treatment: {{ appointment.treatment }}</p>
     <p>Follow Up: {{ appointment.follow_up }}</p>
   </div>
-  <a href="{% url 'appointment-update' appointment.id %}" class="btn warn">Edit</a>
-<a href="{% url 'appointment-delete' appointment.id %}" class="btn danger">Delete</a>
+  <div class="buttons">
+    <a href="{% url 'appointment-update' appointment.id %}" class="btn warn">Edit</a>
+  <a href="{% url 'appointment-delete' appointment.id %}" class="btn danger">Delete</a>
+  </div>
 </section>
 
 {% endblock %}

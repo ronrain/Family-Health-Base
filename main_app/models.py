@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 OPTIONS = (
   ('Yes', 'Yes'),
@@ -24,6 +25,7 @@ class Member(models.Model):
   weight = models.IntegerField()
   medical_history = models.TextField(max_length=250)
   update_date = models.DateField('Update Date')
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):
     return self.name
