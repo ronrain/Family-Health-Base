@@ -59,13 +59,13 @@
   <h3>Past Doctor Appointments</h3>
   <table>
     <thead>
-      <tr><th>Date</th><th>Visit Type</th></tr>
+      <tr><th>Date</th><th>Appointment Type</th></tr>
     </thead>
     <tbody>
       {% for appointment in member.appointment_set.all %}
         <tr>
           <td><a href="{% url 'appointment-detail' appointment.id %}">{{ appointment.date }}</a></td>
-          <td>{{ appointment.visit_type }}</td>
+          <td>{{ appointment.appointment_type }}</td>
         </tr>
       {% endfor %}
     </tbody>
