@@ -17,22 +17,23 @@
   href="{% static 'css/members/member-detail.css' %}"
 />
 <script defer src="{% static 'js/date-input.js' %}"></script>
+<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 {% endblock %}
 
 {% block content %}
 
 <section class="member-container">
-  <div class="member-img">
-  </div>
   <div class="member-details">
-    <h2>{{ member.name }}</h2>
+    <h2 class="header">{{ member.name }}</h2>
       <p>{{ member.name }} was born on {{ member.birth_date }}</p>
     <p>Current Medical History: {{ member.medical_history }}</p>
     <p>{{ member.name }} weighs {{ member.weight }} and is {{ member.height }} inhces tall.</p>
     <p><small>{{ member.gender }}</small></p>
     <div class="member-actions">
-      <a href="{% url 'member-update' member.id %}" class="btn warn">Edit</a>
-      <a href="{% url 'member-delete' member.id %}" class="btn danger">Delete</a>
+      <a href="{% url 'member-update' member.id %}" class="button-35">Edit
+      </a>
+      <a href="{% url 'member-delete' member.id %}" class="button-35">Delete
+      </a>
     </div>
   </div>
 </section>
@@ -51,7 +52,7 @@
     >
       {% csrf_token %}
       {{ appointment_form.as_p }} 
-      <button type="submit" class="btn submit">Add Appointment</button>
+      <button type="submit" class="button-35">Add Appointment</button>
   </form>
   <h3>Doctor Appointments</h3>
   {% if member.appointment_set.count %}

@@ -40,9 +40,42 @@ td > textarea {
 
 .header {
   font-family: var(--font-main);
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .form-input {
 font-family: var(--font-second);
+}
+
+.button-35 {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-sizing: border-box;
+  color: var(--borders);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--font-main);
+  font-size: 1.9rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0 auto;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s,-webkit-box-shadow .2s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+}
+
+.button-35:hover {
+  box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+  background-color: var(--nav-bg);
 }

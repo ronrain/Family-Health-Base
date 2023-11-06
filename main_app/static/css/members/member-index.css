@@ -18,7 +18,7 @@
   font-family: var(--font-second);
 }
 
-header {
+.header {
   font-family: var(--font-main);
 }
 
@@ -44,4 +44,9 @@ header {
 .card p {
   margin: 5px 0;
   font-size: var(--font-reg);
+}
+
+a:visited {
+  text-decoration: none;
+  color: var(--text-color); 
 }

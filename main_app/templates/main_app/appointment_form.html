@@ -10,25 +10,20 @@
 <script 
   src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"
 ></script>
-<link 
-  rel="stylesheet" 
-  type="text/css" 
-  href="{% static 'css/members/member-create.css' %}"
-/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
 <script defer src="{% static 'js/date-input.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-<div class="page-header">
+<div class="header">
   <h1>Edit Appointment</h1>
 </div>
 <form action="{% url 'appointment-update' appointment.id %}" method="post" class="form-container" autocomplete="off">
   {% csrf_token %}
-  <table>
+  <table class="form-input">
     {{ form.as_table }}
   </table>
-  <button type="submit" class="btn submit">Submit!</button>
+  <button type="submit" class="button-35">Submit!</button>
 </form>
 
 {% endblock %}
