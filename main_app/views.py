@@ -6,7 +6,6 @@ from django.views.generic import DetailView
 from django.contrib.auth.views import LoginView
 from .models import Member, Appointment
 from .forms import AppointmentForm
-from datetime import date
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -58,19 +57,19 @@ class AppointmentDetail(LoginRequiredMixin, DetailView):
   model = Appointment
 
 class AppointmentUpdate(LoginRequiredMixin, UpdateView):
-    model = Appointment
-    fields = ['date', 'appointment_type', 'diagnosis', 'treatment', 'follow_up']
+  model = Appointment
+  fields = ['date', 'appointment_type', 'diagnosis', 'treatment', 'follow_up', 'follow_up_date']
 
-    def get_success_url(self):
-        return reverse('appointment-detail', kwargs={'pk': self.object.pk})
+  def get_success_url(self):
+    return reverse('appointment-detail', kwargs={'pk': self.object.pk})
 
 
 class AppointmentDelete(LoginRequiredMixin, DeleteView):
-    model = Appointment
+  model = Appointment
 
-    def get_success_url(self):
-        member_id = self.object.member.id
-        return reverse('member-detail', kwargs={'member_id': member_id})
+  def get_success_url(self):
+    member_id = self.object.member.id
+    return reverse('member-detail', kwargs={'member_id': member_id})
 
 def signup(request):
   error_message = ''

@@ -36,13 +36,22 @@ class Member(models.Model):
 class Appointment(models.Model):
   date = models.DateField('Appointment Date')
   appointment_type = models.CharField(max_length=100)
-  diagnosis = models.CharField(max_length=100)
-  treatment = models.TextField(max_length=250)
+  diagnosis = models.CharField(
+    max_length=100, 
+    null=True, 
+    blank=True
+  )
+  treatment = models.TextField(
+    max_length=250, 
+    null=True, 
+    blank=True
+  )
   follow_up = models.CharField(
     max_length=100,
     choices=OPTIONS,
     default=OPTIONS[1][0]  
   )
+  follow_up_date = models.DateField(null=True, blank=True)
 
   member = models.ForeignKey(Member, on_delete=models.CASCADE)
 
