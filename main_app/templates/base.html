@@ -22,7 +22,13 @@
 </head>
 <body>
   <header>
-    
+      <a href="/">
+        <img 
+          class="base-image"
+          src="{% static "images/logo.png" %}"
+          alt="Family Health Base Logo"
+        >
+      </a>
     <nav>
       <ul>
         {% if user.is_authenticated %}

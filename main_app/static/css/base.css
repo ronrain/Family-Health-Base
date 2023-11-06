@@ -94,10 +94,9 @@ a:visited {
   color: var(--text-color); 
 }
 
-.header-logo-container {
-  margin: auto;
-  padding: 10px 20px 0;
-  max-width: 500px;
+.base-image {
+  max-width: 10rem;
+  max-height: 10rem;
 }
 
 .page-header {
@@ -157,6 +156,12 @@ a:visited {
   font-size: var(--font-reg);
 }
 
+@media only screen and (max-width: 767px) {
+  .base-image {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   header {
     position: sticky;
@@ -171,16 +176,12 @@ a:visited {
     min-height: calc(100vh - 53px);
   }
 
-  nav,
-  .header-logo-container {
+  nav {
     margin: 10px 0;
     padding: 0 15px;
   }
 
   /* visual fix to help align logo */
-  .header-logo-container {
-    padding-top: 3px;
-  }
 
   nav {
     margin-left: auto;
@@ -190,10 +191,6 @@ a:visited {
 
   nav ul {
     flex-wrap: nowrap;
-  }
-
-  .header-logo-container {
-    width: 213px;
   }
 
   .page-header h1 {
@@ -232,8 +229,7 @@ a:visited {
     border-bottom: none;
   }
 
-  nav,
-  .header-logo-container {
+  nav{
     margin: 0;
     background: var(--nav-bg-ff);
     border: var(--borders);
@@ -244,12 +240,7 @@ a:visited {
     margin-left: auto;
   }
 
-  .header-logo-container {
-    /* visual fix to help align logo */
-    padding-top: 6px;
-    width: 256px;
-    height: 35px;
-  }
+
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     header {
@@ -257,8 +248,7 @@ a:visited {
       backdrop-filter: none;
     }
 
-    nav,
-    .header-logo-container {
+    nav {
       background: var(--nav-bg);
       -webkit-backdrop-filter: blur(3px);
       backdrop-filter: blur(3px);

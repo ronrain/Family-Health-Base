@@ -27,7 +27,7 @@
     <h2 class="header">{{ member.name }}</h2>
       <p>{{ member.name }} was born on {{ member.birth_date }}</p>
     <p>Current Medical History: {{ member.medical_history }}</p>
-    <p>{{ member.name }} weighs {{ member.weight }} and is {{ member.height }} inhces tall.</p>
+    <p>{{ member.name }} weighs {{ member.weight }} and is {{ member.height }} inches tall.</p>
     <p><small>{{ member.gender }}</small></p>
     <div class="member-actions">
       <a href="{% url 'member-update' member.id %}" class="button-35">Edit
@@ -36,6 +36,12 @@
       </a>
     </div>
   </div>
+    <div class="member-img">
+      <img 
+        src="{% static 'images/health-form.jpg' %}" 
+        alt="Member Health Form"
+      >
+    </div>
 </section>
 
 <div class="appointment-container">

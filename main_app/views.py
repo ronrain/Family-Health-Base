@@ -6,6 +6,7 @@ from django.views.generic import DetailView
 from django.contrib.auth.views import LoginView
 from .models import Member, Appointment
 from .forms import AppointmentForm
+from datetime import date
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
