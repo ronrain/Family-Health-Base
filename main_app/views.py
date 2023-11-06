@@ -29,7 +29,7 @@ def member_detail(request, member_id):
 
 class MemberCreate(LoginRequiredMixin, CreateView):
   model = Member
-  fields = '__all__'
+  fields = ['name', 'birth_date', 'gender', 'height', 'weight', 'medical_history', 'update_date']
   success_url = '/members/'
 
   def form_valid(self, form):
