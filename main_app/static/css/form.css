@@ -29,8 +29,9 @@ td > * {
 }
 
 td > textarea {
-  height: calc(4 * var(--font-l) + 8px);
-  font-family: inherit;
+  height: 30%;
+  width: 60%;
+  font-family: var(--font-second);
 }
 
 .btn {
