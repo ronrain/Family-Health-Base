@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from datetime import date
 from django.contrib.auth import login
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
@@ -25,7 +26,9 @@ def member_index(request):
 def member_detail(request, member_id):
   member = Member.objects.get(id=member_id)
   appointment_form = AppointmentForm()
-  return render(request, 'members/detail.html', { 'member': member, 'appointment_form': appointment_form })
+  today = date.today()
+  has_appointment_today = Appointment.objects.filter(member=member, date=today).exists()
+  return render(request, 'members/detail.html', { 'member': member, 'appointment_form': appointment_form, 'has_appointment_today': has_appointment_today })
 
 class MemberCreate(LoginRequiredMixin, CreateView):
   model = Member

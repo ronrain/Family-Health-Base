@@ -88,6 +88,11 @@
       <p>{{ member.name }} has no scheduled appointments</p>
     </div>
     {% endif %}
+    {% if has_appointment_today %}
+  <div class="today-appointment">
+    <h3>You have a doctor's appointment today!</h3>
+  </div>
+  {% endif %}
   </section>
 </div>
 </div>
