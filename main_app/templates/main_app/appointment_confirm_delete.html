@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/members/appointment-detail.css' %}"
+/>
+{% endblock %}
+
 {% block content %}
 
-<div class="page-header">
-  <h1>Cancel Appointment</h1>
+<div class="appointment-container">
+  <div class="appointment">
+    <h1><strong>Cancel Appointment</strong></h1>
+    <h2>Are you sure you want cancel this appointment?</h2>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="button-35">Delete</button>
+      <a href="{% url 'appointment-detail' appointment.id %}" class="button-35">Cancel</a>
+    </form>
+  </div>
 </div>
-<h2>Are you sure you want cancel this appointment?</h2>
-<form method="post">
-  {% csrf_token %}
-  <button type="submit" class="btn btn-danger">Delete</button>
-  <a href="{% url 'appointment-detail' appointment.id %}" class="btn btn-secondary">Cancel</a>
-</form>
 
 {% endblock %}

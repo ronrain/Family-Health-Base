@@ -69,6 +69,11 @@
       <button type="submit" class="button-35">Add Appointment</button>
     </form>
     <h3>Doctor Appointments</h3>
+    {% if has_appointment_today %}
+    <div class="today-appointment">
+      You have a doctor's appointment today!
+    </div>
+    {% endif %}
     {% if member.appointment_set.count %}
     <table>
       <thead>
@@ -88,11 +93,6 @@
       <p>{{ member.name }} has no scheduled appointments</p>
     </div>
     {% endif %}
-    {% if has_appointment_today %}
-  <div class="today-appointment">
-    <h3>You have a doctor's appointment today!</h3>
-  </div>
-  {% endif %}
   </section>
 </div>
 </div>
