@@ -17,12 +17,12 @@
     <a href="{% url 'member-detail' member.id %}" class="button-35">Go Back
     </a>
     <h2 class="subsection-title">Appointment Details</h2>
-    <p>Appointment Date: {{ appointment.date }}</p>
-    <p>Appointment Type: {{ appointment.appointment_type }}</p>
-    <p>Diagnosis: {{ appointment.diagnosis }}</p>
-    <p>Treatment: {{ appointment.treatment }}</p>
-    <p>Follow Up: {{ appointment.follow_up }}</p>
-    <p>Follow Up Date: {{ appointment.follow_up_date }}</p>
+    <p><strong>Appointment Date:</strong> {{ appointment.date }}</p>
+    <p><strong>Appointment Type:</strong> {{ appointment.appointment_type }}</p>
+    <p><strong>Diagnosis:</strong> {{ appointment.diagnosis }}</p>
+    <p><strong>Treatment:</strong> {{ appointment.treatment }}</p>
+    <p><strong>Follow Up:</strong> {{ appointment.follow_up }}</p>
+    <p><strong>Follow Up Date:</strong> {{ appointment.follow_up_date }}</p>
     <div class="buttons">
       <a href="{% url 'appointment-update' appointment.id %}" class="button-35">Edit</a>
       <a href="{% url 'appointment-delete' appointment.id %}" class="button-35">Delete</a>

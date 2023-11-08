@@ -24,10 +24,10 @@ body {
   align-items: center;
   min-height: 100vh;
   --nav-bg: #C1DBB3;
-  --nav-bg-ff: #84A98C;
   --borders: #354F52 solid 3px;
   --text-color: #011627;
   --link-hover-color: #52796F;
+  --hover: #F7A278;
   --card-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   --font-xtreme: 4.2rem;
   --font-xxl: 3.6rem;
@@ -41,7 +41,6 @@ body {
 
 header {
   width: 100%;
-  background: var(--nav-bg-ff); /* rgba(104, 197, 248, .9) */
   border-bottom: var(--borders);
 }
 
@@ -135,7 +134,7 @@ a {
 
 .button-35:hover {
   box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
-  background-color: var(--nav-bg);
+  background-color: var(--hover);
 }
 
 .button-35:visited {
@@ -165,6 +164,9 @@ a {
   .base-image {
     display: none;
   }
+  header {
+    background-color: var(--nav-bg);
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -174,6 +176,7 @@ a {
     flex-direction: row;
     top: 0;
     align-items: center;
+    background-color: var(--nav-bg);
   }
 
   main {
@@ -192,6 +195,7 @@ a {
     margin-left: auto;
     display: flex;
     justify-content: center;
+    background-color: var(--nav-bg);
   }
 
   nav ul {
@@ -236,8 +240,8 @@ a {
 
   nav{
     margin: 0;
-    background: var(--nav-bg-ff);
     border: var(--borders);
+    background-color: var(--nav-bg);
     border-radius: 18px;
   }
 

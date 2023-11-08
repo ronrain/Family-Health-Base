@@ -79,7 +79,7 @@ font-family: var(--font-second);
 
 .button-35:hover {
   box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
-  background-color: var(--nav-bg);
+  background-color: var(--hover);
 }
 
 .button-35:visited {
