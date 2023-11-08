@@ -14,6 +14,8 @@
 
 <section class="appointment-container">
   <div class="appointment">
+    <a href="{% url 'member-detail' member.id %}" class="button-35">Go Back
+    </a>
     <h2 class="subsection-title">Appointment Details</h2>
     <p>Appointment Date: {{ appointment.date }}</p>
     <p>Appointment Type: {{ appointment.appointment_type }}</p>

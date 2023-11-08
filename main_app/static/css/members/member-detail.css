@@ -2,6 +2,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  color: var(--text-color);
 }
 
 .member-container {
@@ -9,8 +10,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: var(--card-box-shadow);
   margin: 3rem;
+  background-color: #C1DBB3;
 }
 
 .member-img img {
@@ -85,9 +87,8 @@
 }
 
 .appointment-container > section {
-  width: 80%;
-  min-width: 360px;
-  border: var(--borders);
+  width: 100%;
+  min-width: 400px;
   border-radius: var(--card-border-radius);
   padding: 10px;
   box-shadow: var(--card-box-shadow);
@@ -95,6 +96,7 @@
   flex-direction: column;
   justify-content: center;
   margin-bottom: 20px;
+  background-color: var(--nav-bg);
 }
 
 .subsection-title img {
@@ -150,7 +152,7 @@
   background-color: #f3f3fd;
 }
 
-a:visited {
+a {
   text-decoration: none;
   color: var(--text-color); 
 }

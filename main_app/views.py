@@ -59,13 +59,17 @@ def add_appointment(request, member_id):
 class AppointmentDetail(LoginRequiredMixin, DetailView):
   model = Appointment
 
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context['member'] = self.object.member
+    return context
+
 class AppointmentUpdate(LoginRequiredMixin, UpdateView):
   model = Appointment
   fields = ['date', 'appointment_type', 'diagnosis', 'treatment', 'follow_up', 'follow_up_date']
 
   def get_success_url(self):
     return reverse('appointment-detail', kwargs={'pk': self.object.pk})
-
 
 class AppointmentDelete(LoginRequiredMixin, DeleteView):
   model = Appointment

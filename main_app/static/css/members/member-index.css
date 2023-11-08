@@ -3,12 +3,12 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  color: var(--text-color);
 }
 
 .card {
   width: 275px;
   margin: 10px;
-  border: var(--borders);
   box-shadow: var(--card-box-shadow);
 }
 
@@ -50,7 +50,7 @@
   font-size: var(--font-reg);
 }
 
-a:visited {
+a {
   text-decoration: none;
   color: var(--text-color); 
 }

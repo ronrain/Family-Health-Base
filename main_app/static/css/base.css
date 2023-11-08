@@ -23,12 +23,12 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  --nav-bg: #CAD2C5;
+  --nav-bg: #C1DBB3;
   --nav-bg-ff: #84A98C;
   --borders: #354F52 solid 3px;
-  --text-color: #2F3E46;
+  --text-color: #011627;
   --link-hover-color: #52796F;
-  --card-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  --card-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   --font-xtreme: 4.2rem;
   --font-xxl: 3.6rem;
   --font-xl: 2.4rem;
@@ -89,7 +89,7 @@ nav li {
   padding-bottom: 1.4rem;
 }
 
-a:visited {
+a {
   text-decoration: none;
   color: var(--text-color); 
 }
