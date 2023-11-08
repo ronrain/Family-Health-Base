@@ -1,5 +1,6 @@
 # 🏥 Family Health Base
 
+### Check it out here ➡️ [Family Health Base](https://yourfamilyhealthbase.fly.dev/)
 
 ## 💪 Usage
 The key to a successful and high-quality life is to prioritize your health. Whether it's maintaining a balanced diet, staying active, or keeping track of your medical appointments, good health is essential. Family Health Base empowers users to take control of their health by helping them manage their doctor appointments, both for themselves and their family members.
@@ -16,7 +17,6 @@ Knowing when your appointments are and having access to detailed appointment not
 
 ![Screenshot](/main_app/static/images/screenshot.png)
 
-### Check it out here ➡️ [Family Health Base](https://yourfamilyhealthbase.fly.dev/)
 
 ## 🙌 Attributions
 - [CSS Button Animator](https://getcssscan.com/css-buttons-examples?ref=beautifulboxshadow-bottom)
