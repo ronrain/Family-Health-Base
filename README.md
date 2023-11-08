@@ -7,13 +7,14 @@ The key to a successful and high-quality life is to prioritize your health. Whet
 With Family Health Base, you can effortlessly log and organize your medical appointments, be it a routine check-up, a dental visit, or addressing a more serious health issue. Keep detailed records of your diagnoses, treatments, and follow-ups. Stay up-to-date with important information about you and your family members. Monitor changes in height and weight, and track your health progress over time.
 
 Knowing when your appointments are and having access to detailed appointment notes ensures that you and your family can always stay informed and proactive about your well-being. 🌟
+
 ## 🌟 Features
 - Full CRUD for family members and appointments
 - Ability to be notified on the application when you have an appointment
 - Log doctor appointments at your conveince
 - Login and signup features powered by django
 
-![Screenshot](/images/screenshot.png)
+![Screenshot](/main_app/static/images/screenshot.png)
 
 ### Check it out here ➡️ [Family Health Base](https://yourfamilyhealthbase.fly.dev/)
 
