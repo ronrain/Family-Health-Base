@@ -28,14 +28,13 @@
     <nav>
       <ul>
         {% if user.is_authenticated %}
-          <li><a href="{% url 'member-index' %}">All Family Members</a></li>
-          <li><a href="{% url 'member-create' %}">Add Family Member</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'logout' %}">Log out</a></li>
+        <li><a href="{% url 'member-index' %}">All Family Members</a></li>
+        <li><a href="{% url 'member-create' %}">Add Family Member</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'logout' %}">Log out</a></li>
         {% else %}
-          <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'home' %}">Login</a></li>
-          <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'home' %}">Login</a></li>          <li><a href="{% url 'signup' %}">Sign Up</a></li>
         {% endif %}
       </ul>
     </nav>

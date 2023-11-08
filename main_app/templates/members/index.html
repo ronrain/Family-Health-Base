@@ -2,39 +2,37 @@
 {% load static %}
 
 {% block head %}
-<link 
-  rel="stylesheet"
-  type="text/css"
-  href="{% static 'css/members/member-index.css' %}"
+  <link 
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'css/members/member-index.css' %}"
+  />
 
-<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" 
-/>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" 
+  />
 {% endblock %}
 
 {% block content %}
-
-<section class="page-header">
-  <h1 class="header">Family Members</h1>
-  <div class="member-img">
-    <dotlottie-player src="https://lottie.host/e37dfff6-7981-4e63-84cc-5abf11bc59c2/DiiMg3DJDs.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
-  </div>
-</section>
-
-<section class="card-container">
-  {% for member in members %}
-    <div class="card">
-      <a href="{% url 'member-detail' member.id %}">
-        <div class="card-content">
-          <div class="card-img-container">
-          </div>
-          <h2 class="card-title">{{ member.name }}</h2>
-          <p>{{ member.name }} was born on {{ member.birth_date }}</p>
-          <p>Current Medical History: {{ member.medical_history }}</p>
-          <p>{{ member.name }} weighs {{ member.weight }} and is {{ member.height }} inhces tall.</p>
-        </div>
-      </a>
+  <section class="page-header">
+    <h1 class="header">Family Members</h1>
+    <div class="member-img">
+      <dotlottie-player src="https://lottie.host/e37dfff6-7981-4e63-84cc-5abf11bc59c2/DiiMg3DJDs.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
     </div>
-  {% endfor %}
-</section>
-
+  </section>
+  <section class="card-container">
+    {% for member in members %}
+      <div class="card">
+        <a href="{% url 'member-detail' member.id %}">
+          <div class="card-content">
+            <div class="card-img-container">
+            </div>
+            <h2 class="card-title">{{ member.name }}</h2>
+            <p>{{ member.name }} was born on {{ member.birth_date }}</p>
+            <p>Current Medical History: {{ member.medical_history }}</p>
+            <p>{{ member.name }} weighs {{ member.weight }} and is {{ member.height }} inhces tall.</p>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </section>
 {% endblock %}

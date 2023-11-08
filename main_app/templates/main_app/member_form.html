@@ -2,36 +2,35 @@
 {% load static %}
 
 {% block head %}
-<link 
-  href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" 
-  rel="stylesheet" 
-/>
-<link rel="stylesheet" href="{% static 'css/mcdp.css' %}">
-<script 
-  src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"
->
-</script>
-<link 
-  rel="stylesheet" 
-  type="text/css" 
-  href="{% static 'css/members/member-detail.css' %}"
-/>
-<script defer src="{% static 'js/date-input.js' %}"></script>
-<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
+  <link 
+    href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" 
+    rel="stylesheet" 
+  />
+  <link rel="stylesheet" href="{% static 'css/mcdp.css' %}">
+  <script 
+    src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"  
+  >
+  </script>
+  <link 
+    rel="stylesheet" 
+    type="text/css" 
+    href="{% static 'css/members/member-detail.css' %}"
+  />
+  <script defer src="{% static 'js/date-input.js' %}"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
 {% endblock %}
 
 {% block content %}
   {% if member %}
-  <h1 class="header">Edit {{ member.name }}</h1>
+    <h1 class="header">Edit {{ member.name }}</h1>
   {% else %}
-  <h1 class="header">Add a Family Member</h1>
+    <h1 class="header">Add a Family Member</h1>
   {% endif %}
-<form action="" method="post" class="form-container">
-  {% csrf_token %}
-  <table class="form-input">
-    {{ form.as_table }}
-  </table>
-  <button type="submit" class="button-35">Save</button>
-</form>
-
+  <form action="" method="post" class="form-container">
+    {% csrf_token %}
+    <table class="form-input">
+      {{ form.as_table }}
+    </table>
+    <button type="submit" class="button-35">Save</button>
+  </form>
 {% endblock %}

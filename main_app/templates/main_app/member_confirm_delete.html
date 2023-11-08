@@ -2,20 +2,18 @@
 {% load static %}
 
 {% block content %}
-
-<div class="page-header">
-  <h1>Remove Family Member</h1>
-</div>
-<h2>Are you sure you want to remove {{ member.name }}?</h2>
-<form action="" method="post" class="form">
-  {% csrf_token %}
-  <a 
-    href="{% url 'member-detail' member.id %}" 
-    class="btn secondary"
-  >
-    Cancel
-  </a>
-  <button type="submit" class="button-35">Yes, Remove!</button>
-</form>
-
+  <div class="page-header">
+    <h1>Remove Family Member</h1>
+  </div>
+  <h2>Are you sure you want to remove {{ member.name }}?</h2>
+  <form action="" method="post" class="form">
+    {% csrf_token %}
+      <a 
+        href="{% url 'member-detail' member.id %}" 
+        class="btn secondary"
+      >
+        Cancel
+      </a>
+    <button type="submit" class="button-35">Yes, Remove!</button>
+  </form>
 {% endblock %}
