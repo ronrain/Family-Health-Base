@@ -8,4 +8,20 @@ The key to a successful and high quality life is to keep yourself healthy. Wheth
 - Ability to be notified on the application when you have an appointment
 - Log doctor appointments at your conveince
 - Login and signup features powered by django
-- 
+
+### Check out it out here >>> Deployment Link
+
+## Attributions
+- [CSS Button Animator](https://getcssscan.com/css-buttons-examples?ref=beautifulboxshadow-bottom)
+- [CSS Box-Shadow](https://getcssscan.com/css-box-shadow-examples)
+- [Animated Images](https://lottiefiles.com/)
+- [Favicon Generator](https://favicon.io/favicon-generator/)
+
+## Technologies Used
+- Python3
+- Django
+- Neon
+- Docker
+- HTML
+- CSS
+- [JavaScript](https://img.shields.io/badge/logo-javascript-blue?logo=javascript)
