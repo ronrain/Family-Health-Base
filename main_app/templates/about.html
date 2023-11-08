@@ -1,11 +1,42 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% load static %}
 
-<h1>About the Family Health Base</h1>
-<hr />
-<p class="page-content">
-  I like long romantic walks down the produce aisle. Also, I am currently job seeking!
-</p>
+{% block head %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/members/member-index.css' %}">
+
+{% endblock %}
+
+{% block content %}
+  <h1 class="title">About the Family Health Base</h1>
+  <hr />
+  <p class="page-content">
+    The key to a successful and high-quality life is to prioritize your health. Whether it's maintaining a balanced diet, staying active, or keeping track of your medical appointments, good health is essential. Family Health Base empowers users to take control of their health by helping them manage their doctor appointments, both for themselves and their family members.
+    <br>
+    <br>
+    With Family Health Base, you can effortlessly log and organize your medical appointments, be it a routine check-up, a dental visit, or addressing a more serious health issue. Keep detailed records of your diagnoses, treatments, and follow-ups. Stay up-to-date with important information about you and your family members. Monitor changes in height and weight, and track your health progress over time.
+    <br>
+    <br>
+    Knowing when your appointments are and having access to detailed appointment notes ensures that you and your family can always stay informed and proactive about your well-being.
+    <br>
+    <br>
+    For more information, please contact Ronald Rainero for any questions or concerns:
+  </p>
+    <div class="social-links">
+      <a href="mailto:rarainero@gmail.com" target="_blank" rel="noopener noreferrer" class="social-link">
+        <img src="https://img.shields.io/badge/Email-Gmail-red?style=flat&logo=gmail&logoColor=white" alt="Gmail">
+      </a>
+      <a href="https://www.linkedin.com/in/ronald-rainero/" target="_blank" rel="noopener noreferrer" class="social-link">
+        <img src="https://img.shields.io/badge/LinkedIn-Profile-blue?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/ronrain" target="_blank" rel="noopener noreferrer" class="social-link">
+        <img src="https://img.shields.io/badge/GitHub-Profile-black?style=flat&logo=github&logoColor=white" alt="GitHub">
+      </a>
+    </div>
+    
+
 
 {% endblock %}

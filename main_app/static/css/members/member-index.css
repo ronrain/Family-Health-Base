@@ -54,3 +54,23 @@ a {
   text-decoration: none;
   color: var(--text-color); 
 }
+
+
+.page-content {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: var(--text-color);
+  font-family: var(--font-second);
+}
+
+.title {
+  font-style: var(--font-main);
+} 
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
