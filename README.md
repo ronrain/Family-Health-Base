@@ -12,7 +12,7 @@ Knowing when your appointments are and having access to detailed appointment not
 ## 🌟 Features
 - Full CRUD for family members and appointments
 - Ability to be notified on the application when you have an appointment
-- Log doctor appointments at your conveince
+- Log doctor appointments at your convenience 
 - Login and signup features powered by django
 
 ![Screenshot](/main_app/static/images/screenshot.png)
